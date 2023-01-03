@@ -12,7 +12,6 @@
     background-color: var(--background);
     opacity: 0.6;
     color: black;
-    
 }
 nav{
 
@@ -69,4 +68,54 @@ input{
 }
 .items ul li a p{
     margin-left: 10px;
+}
+
+/*body*/
+
+
+.container{
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+   width: 25%;
+   margin: 10px auto;
+   padding:10px 0px;   
+   border-radius: 20px;
+   
+}
+.container h1{
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 2px solid rgba(0,0,0,0.5);
+    margin:0 10px;
+}
+.user-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.user-section img{
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+textarea{
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    outline: none;
+    border: none;
+border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.post-btn{
+    padding: 5px 10px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 94%;
+    border: 0;
+    outline: 0;
+    background-color: var(--background);
+    border-radius: 12px;
+    color: grey;
+
 }
