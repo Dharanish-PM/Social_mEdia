@@ -2,6 +2,7 @@
     margin:0;
     border:0;
     box-sizing: border-box;
+    font-size: 15px;
 }
 /*body{
     background: url("./images/bg.jpg");
@@ -30,10 +31,13 @@ body{
     width: 50% ;
 }
 .detail{
-    border:2px solid black;
+
     width: 50%;
-    box-shadow: 1px 1px 4px 8px rgba(0,0,0,0.9);
-    padding:100px;
+    box-shadow: 20px 20px 50px 10px pink inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
 }
 .detail .top{
@@ -42,28 +46,69 @@ body{
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-around;
-      margin-bottom: 50px;
+      justify-content: space-evenly;
+      margin-bottom: 30px;
 }
 input:focus{
     outline: none;
 }
-label,input{
+input{
     display: inline-block;
 
 }
 input{
-    border-bottom: 2px solid black;
-    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 5px solid pink;
+    font-size: 15px;
+    padding: 10px 5px;
+    width: 100%;
     
 }
+
 .input-sec{
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.info{
+
+    width: 70%;
+}
+.login{
+    width: 30%;
+    border-radius: 20px;
+    border-bottom: 5px solid pink;
+    padding: 5px 10px;
+    
+}
+.login:hover,.signup:hover{
+    opacity: 0.8;
+}
+
+.signup{
+    width: 30%;
+    border-radius: 20px;
+    border-bottom:5px solid pink ;
+    padding: 5px 10px;
+  
+}
+.ac{
+    background: white;
+}
+
 .submit{
     display: block;
     margin :30px auto;
+    width: 70%;
+    border-radius: 20px;
+    background-color: pink;
+    padding: 10px;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+    cursor: pointer;
 }
+.submit:hover {
+    opacity: 0.8;
+}
+
