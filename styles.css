@@ -62,33 +62,39 @@ body{
       justify-content: space-evenly;
       margin-bottom: 30px;
 }
-input:focus{
-    outline: none;
-}
-input{
-    display: inline-block;
 
-}
-input{
-    /*border-bottom: 5px solid var(--line);*/
-    box-shadow: 1px 1px 10px var(--background);
-    font-size: 15px;
-    padding: 10px 5px;
-    width: 85%;
-    border-radius: 10px;
-
-}
 
 .input-sec{
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .input-sec img{
-    width: 25px;
+  
     height: 25px;
+    position: absolute;
+    left:5px;
+    
  
+}
+input:focus {
+    outline: none;
+}
+
+input {
+    /*border-bottom: 5px solid var(--line);*/
+    box-shadow: 1px 1px 10px grey;
+    font-size: 15px;
+   
+    width: 100%;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    padding: 10px 40px;
+    background: transparent;
+
 }
 .info{
 
@@ -99,20 +105,28 @@ input{
     border-radius: 20px;
     border-bottom: 5px solid var(--background);
     padding: 5px 10px;
-    color:grey;
+    color:black;
+    outline: 0;
+    background: rgba(0,0,0,0.3);
+    transition: background 1s;
     
 }
 .login:hover,.signup:hover{
     opacity: 0.8;
+    transform: scale(1.02);
+    
 
 }
 
 .signup{
     width: 30%;
-    border-radius: 20px;
-    border-bottom:5px solid var(--background);
-    padding: 5px 10px;
-    color:grey;
+        border-radius: 20px;
+        border-bottom: 5px solid var(--background);
+        padding: 5px 10px;
+        color: black;
+        outline: 0;
+        background: rgba(0, 0, 0, 0.3);
+        transition: background 1s;
   
 }
 .ac{
@@ -132,9 +146,12 @@ input{
     font-weight: bolder;
     font-size: 15px;
     cursor: pointer;
+    
+   
 }
 .submit:hover {
     opacity: 0.8;
+    transform: scale(1.02);
 }
 .disable{
     display: none;
