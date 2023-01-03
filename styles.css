@@ -111,4 +111,8 @@ input{
 .submit:hover {
     opacity: 0.8;
 }
+.disable{
+    display: none;
+}
+
 

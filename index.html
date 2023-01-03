@@ -21,23 +21,34 @@
             </div>
             
             <div class="info">
-                <form action=""  >
-                    <div class="input-sec">     
-                        <input id="user" class="username" placeholder="User Name" type="text">
-                    </div>
-                    
-                    <div class="input-sec">
-                        <input id="pass" placeholder="Password" type="password">
-                    </div>
-                    <button class="submit" type="submit" onclick="myfun()">Login </button>
+                <div class="log" >
+                    <form action="">
+                        <div class="input-sec">
+                            <input id="user" class="username" placeholder="User Name" type="text">
+                        </div>
 
-                </form>
-               
-            </div>
+                        <div class="input-sec email " style="display: none;" >
+                        <input id="email" class="email" placeholder="Email" type="text">
+                    </div>
+                     
+                        <div class="input-sec ">
+                            <input id="pass" placeholder="Password" type="password">
+                        </div>
+                        
+                        <div class="input-sec confirmpass" style="display: none;">
+                            <input id="confirmpass" placeholder="Confirm Password" type="password">
+                        </div>
+
+                        
+                        <button class="submit" type="submit" onclick="myfun()">Login </button>
+                    </form>
+
+                </div>
+                
 
           
-
-
+               
+            </div>
         </div>
 
         
