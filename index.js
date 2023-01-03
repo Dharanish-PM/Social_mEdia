@@ -12,22 +12,17 @@ const signup = document.querySelector(".signup");
 login.addEventListener('click', () => {
     login.classList.remove("ac");
     signup.classList.add("ac");
-        document.querySelector(".email").style.display = "none";
-    document.querySelector(".confirmpass").style.display = "none";
+     document.querySelector(".email").classList.add('disable');
+    document.querySelector(".confirmpass").classList.add('disable');
     
-   
-
+    document.querySelector(".submit").innerHTML="Login"
 })
 signup.addEventListener('click', () => {
     signup.classList.remove("ac");
     login.classList.add("ac");
-    document.querySelector(".email").style.display = "block";
-    document.querySelector(".confirmpass").style.display = "block";
-    document.querySelector(".submit").innerHTML="SignUp"
-
-  
-    
-
+    document.querySelector(".email").classList.remove('disable');
+    document.querySelector(".confirmpass").classList.remove('disable');
+    document.querySelector(".submit").innerHTML = "SignUp";
 })
 
 

@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root{
+    --background:#b1dee9;
+    --line:#000000;
+}
 *{
     margin:0;
     border:0;
     box-sizing: border-box;
-    font-size: 15px;
-}
-/*body{
-    background: url("./images/bg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity:0.1;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
 
-}*/
+    
+}
+
 body{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    
 }
 .container{
     z-index: 100;
@@ -29,11 +32,14 @@ body{
 
 .img-section{
     width: 50% ;
+    background: url("./images/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .detail{
-
     width: 50%;
-    box-shadow: 20px 20px 50px 10px pink inset;
+    background-image: linear-gradient(to right,white,#b1dee9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,11 +63,13 @@ input{
 
 }
 input{
-    border-bottom: 5px solid pink;
+    /*border-bottom: 5px solid var(--line);*/
+    box-shadow: 1px 1px 10px var(--background);
     font-size: 15px;
     padding: 10px 5px;
-    width: 100%;
-    
+    width: 85%;
+    border-radius: 10px;
+
 }
 
 .input-sec{
@@ -70,6 +78,11 @@ input{
     justify-content: space-between;
     align-items: center;
 }
+.input-sec img{
+    width: 25px;
+    height: 25px;
+ 
+}
 .info{
 
     width: 70%;
@@ -77,19 +90,22 @@ input{
 .login{
     width: 30%;
     border-radius: 20px;
-    border-bottom: 5px solid pink;
+    border-bottom: 5px solid var(--background);
     padding: 5px 10px;
+    color:grey;
     
 }
 .login:hover,.signup:hover{
     opacity: 0.8;
+
 }
 
 .signup{
     width: 30%;
     border-radius: 20px;
-    border-bottom:5px solid pink ;
+    border-bottom:5px solid var(--background);
     padding: 5px 10px;
+    color:grey;
   
 }
 .ac{
@@ -101,9 +117,11 @@ input{
     margin :30px auto;
     width: 70%;
     border-radius: 20px;
-    background-color: pink;
+    background-color: var(--background);
+    border: 1px solid rgba(0,0,0,0.3);
+    
     padding: 10px;
-    color: white;
+    color: grey;
     font-weight: bolder;
     font-size: 15px;
     cursor: pointer;
