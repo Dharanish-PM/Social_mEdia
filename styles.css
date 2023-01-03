@@ -9,24 +9,29 @@
     box-sizing: border-box;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
-
-    
 }
-
 body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+     height: 100vh;
+    background: url("./images/bg1alter.jpg");
+    background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     
 }
+
 .container{
-    z-index: 100;
+   z-index: 100;
     width: 60%;
     height: 80%;
-    box-shadow: 1px 0.4px 20px 0.9px rgba(0,0,0,0.9);
+    border-radius:20px;
+    box-shadow: 1px 0.4px 50px 0.9px grey;
     display: flex;
     flex-direction: row;
+   
+   
 
 }
 
@@ -36,6 +41,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
 }
 .detail{
     width: 50%;
@@ -44,6 +50,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  
     
 }
 .detail .top{
