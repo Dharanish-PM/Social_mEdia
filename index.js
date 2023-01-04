@@ -1,10 +1,4 @@
-var username = "";
-var password = "";
 
-function myfun() {
-    username = document.querySelector("#user");
-    password = document.querySelector("#pass");
-}
 
 const login = document.querySelector(".login");
 const signup = document.querySelector(".signup");
@@ -25,5 +19,11 @@ signup.addEventListener('click', () => {
     document.querySelector(".submit").innerHTML = "SignUp";
 })
 
-
+var form = document.querySelector('.log');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();//autosubmission suppress
+    var username = document.querySelector(".username");
+    var password = document.querySelector(".password");
+    var email = document.querySelector(".email");
+})
 
