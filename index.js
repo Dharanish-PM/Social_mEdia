@@ -19,6 +19,7 @@ signup.addEventListener('click', () => {
 })
 
 var form = document.querySelector('.log');
+var submit=document.querySelector('.submit');
 form.addEventListener('submit', (e) => {
     e.preventDefault();//autosubmission suppress
     const inputs = form.elements;
@@ -31,15 +32,16 @@ form.addEventListener('submit', (e) => {
     console.log(data);
    
     fetch('http://10.140.16.52:5000/login', {
-        mode: 'no-cors',
+        mode:'no-cors',
         method: 'POST', // or 'PUT'
         headers: {     
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Accept': 'application/json,,text/plain,*/*',
+            'Content-Type': 'application/json'
+            
         },
         body: JSON.stringify(data)
    
-    }).then((response) => response.text())
+    }).then((response) => response.json())
       .then((data) => {
            console.log('Success:', data); 
         })
