@@ -1,5 +1,4 @@
 
-
 const login = document.querySelector(".login");
 const signup = document.querySelector(".signup");
 
@@ -22,8 +21,30 @@ signup.addEventListener('click', () => {
 var form = document.querySelector('.log');
 form.addEventListener('submit', (e) => {
     e.preventDefault();//autosubmission suppress
-    var username = document.querySelector(".username");
-    var password = document.querySelector(".password");
-    var email = document.querySelector(".email");
+    const inputs = form.elements;
+    const data = {
+        "username": inputs["username"].value,
+        "password": inputs["password"].value,
+        "email":inputs["email"].value
+    }
+   
+    console.log(data);
+   
+    fetch('http://10.140.16.52:5000/login', {
+        mode: 'no-cors',
+        method: 'POST', // or 'PUT'
+        headers: {     
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+   
+    }).then((response) => response.text())
+      .then((data) => {
+           console.log('Success:', data); 
+        })
+        .catch((error) => {
+             console.dir('Error:', error);
+        });
+    
 })
-
