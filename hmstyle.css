@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 :root {
     --background: #b1dee9;
     --line: #000000;
@@ -7,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 18px;
+    font-family: 'Poppins', sans-serif;
 }
 .navbar{
     background-color: var(--background);
@@ -156,6 +158,26 @@ border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 
 .share{
     margin-left: 5px;
+}
+
+.likes-num {
+    font-size : 15px;
+    margin-left: 20px;
+    
+}
+
+.description {
+    font-size: 14px;
+    margin-left:20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.desc-user{
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
 }
 
 #feed {
