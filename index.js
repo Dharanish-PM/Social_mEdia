@@ -32,7 +32,7 @@ form.addEventListener('submit', (e) => {
     console.log(data);
    
     fetch('http://10.140.16.52:5000/login', {
-        mode:'no-cors',
+    
         method: 'POST', // or 'PUT'
         headers: {     
             'Accept': 'application/json,,text/plain,*/*',
