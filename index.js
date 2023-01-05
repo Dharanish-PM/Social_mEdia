@@ -37,7 +37,7 @@ form1.addEventListener('submit', (e) => {
              console.dir('Error:', error);
         });
 
-        console.log(2);
+     
     
 })
 login.addEventListener('click', () => {
