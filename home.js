@@ -5,15 +5,18 @@ console.log('Bearer '+localStorage.getItem("token"));
         method: 'POST', // or 'PUT'
      headers: {    
          'Authorization':'Bearer '+localStorage.getItem("token"),
-            'Accept': 'application/json,,text/plain,*/*',
+            'Accept': 'application/json,text/plain,*/*',
             'Content-Type': 'application/json'      
         },
         body: ""
    
     }).then((response) => response.json())
-        .then((data) => {
+     .then((data) => {
+         
+            
+            
             console.log(data)
         })
         .catch((error) => {
              console.dir('Error:', error);
-        });
+    });
