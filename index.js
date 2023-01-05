@@ -1,18 +1,9 @@
 
 const login = document.querySelector(".login");
 const signup = document.querySelector(".signup");
-var form1 = document.querySelector('.log');
+var form1 = document.querySelector('#logform');
 var form2 = document.querySelector('.sign');
-
-var submit = document.querySelector('.submit');
-login.addEventListener('click', () => {
-    login.classList.remove("ac");
-    signup.classList.add("ac");
-    
-     form1.classList.remove("disable");
-    form2.classList.add("disable");
-
-    form1.addEventListener('submit', (e) => {
+form1.addEventListener('submit', (e) => {
     e.preventDefault();//autosubmission suppress
         const inputs = form1.elements;
         
@@ -20,7 +11,8 @@ login.addEventListener('click', () => {
         "email": inputs["curremail"].value,
         "password": inputs["password"].value
        
-    }
+        }
+        console.log(1);
    
     fetch('http://192.168.236.5:5000/login', {
     
@@ -33,7 +25,10 @@ login.addEventListener('click', () => {
    
     }).then((response) => response.json())
         .then((data) => {
+            console.log(data["token"])
+            localStorage.setItem("token", data["token"])
             if (data['status'] == 'Success') {
+                
                 window.location.href = "/home.html"
                 
             }
@@ -41,9 +36,17 @@ login.addEventListener('click', () => {
         .catch((error) => {
              console.dir('Error:', error);
         });
+
+        console.log(2);
     
 })
- 
+login.addEventListener('click', () => {
+    console.log(3);
+    login.classList.remove("ac");
+    signup.classList.add("ac");
+    
+     form1.classList.remove("disable");
+    form2.classList.add("disable");
 })
 signup.addEventListener('click', () => {
     signup.classList.remove("ac");
@@ -78,15 +81,12 @@ signup.addEventListener('click', () => {
         })
         .catch((error) => {
              console.dir('Error:', error);
-        });
-
-    
-    
+        });   
+})  
 })
-   
 
 
-})
+
 
 
 
