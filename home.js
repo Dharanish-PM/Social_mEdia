@@ -1,9 +1,10 @@
 function like_post() {
-    let like = document.querySelector('#like');
    
-    like.style.color='red';
+   
+     document.querySelector('.like').style.color='red';
+    console.log(1);
     
     
 }
 
-document.getElementById('like').addEventListener("click",like_post);
+document.querySelector('.like').addEventListener("click",like_post);

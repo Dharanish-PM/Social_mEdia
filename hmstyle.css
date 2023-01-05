@@ -79,7 +79,7 @@ input{
 .container{
    box-shadow: 0.05rem 0.05rem 1rem 0.05rem rgba(0, 0, 0, 0.5);
    width: 25%;
-   margin: 0.5rem auto;
+   margin: 0.5rem 20rem 0.5rem 10rem;
    padding:0.5rem 0rem;   
    border-radius: 1rem;
    
@@ -142,7 +142,7 @@ border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
 }
 
 .post{
-    margin: 0.15rem 1rem;
+    margin: 0.15rem 1rem 0.15rem 0.1rem;
 }
 
 .post-like{
@@ -210,7 +210,22 @@ border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
     margin-left : 1rem;
 }
 
+.left-pane {
+    margin : 5rem 2rem;
+    box-shadow: 0.05rem 0.05rem 1rem 0.05rem grey;
+
+}
+
+.right-pane {
+    margin : 2rem 0.01rem;
+}
+
 #feed {
-    margin: 5rem 29rem;
-    box-shadow: 0.05rem 0.05rem 0.05rem 0.05rem grey;
+    margin: 5rem 9rem;
+    box-shadow: 0.05rem 0.05rem 1rem 0.05rem grey;
+}
+
+#post-feed {
+    display: flex;
+    flex-direction: row;
 }
