@@ -166,6 +166,11 @@ border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
 .like{
     margin-right: 0.25rem;
 }
+.likebtn{
+    background-color: red;
+    color: red;
+
+}
 
 .share{
     margin-left: 5px;
