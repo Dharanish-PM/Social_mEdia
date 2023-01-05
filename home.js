@@ -1,3 +1,13 @@
+function like_post() {
+   
+   
+     document.querySelector('.like').style.color='red';
+    console.log(1);
+    
+    
+}
+
+document.querySelector('.like').addEventListener("click",like_post);
 console.log('Bearer '+localStorage.getItem("token"));
 
  fetch('http://192.168.236.5:5000/showpost', {
