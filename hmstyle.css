@@ -7,16 +7,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 0.95rem;
+    font-size: 1.03rem;
     font-family: 'Poppins', sans-serif;
 }
 .navbar{
     background-color: var(--background);
     opacity: 0.6;
     color: black;
+    font-size: 1.1rem;
+
 }
 nav{
-
+ 
     max-width: 60rem;
     margin: 0 auto;
     display: flex;
@@ -30,6 +32,12 @@ ul{
 }
 a{
     text-decoration: none;
+}
+li{
+    height: 40px;
+}
+li:hover{
+    border-bottom: 1px solid black;
 }
 
 .search{
@@ -50,9 +58,12 @@ input{
     position: absolute;
     left:0.5rem;
 }
+
 .icon{
     height: 1rem;
     width: 1rem;
+  
+    
 }
 
 .items ul{
@@ -182,6 +193,6 @@ border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
 }
 
 #feed {
-    margin: 5rem 29rem;
+    margin: 5rem 20rem;
     box-shadow: 0.05rem 0.05rem 0.05rem 0.05rem grey;
 }
