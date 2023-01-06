@@ -14,7 +14,7 @@ form1.addEventListener('submit', (e) => {
         }
         console.log(1);
    
-    fetch('http://192.168.236.5:5000/login', {
+    fetch('http://10.140.16.100:5000/login', {
     
         method: 'POST', // or 'PUT'
         headers: {     
@@ -65,7 +65,7 @@ signup.addEventListener('click', () => {
    
  
    
-    fetch('http://192.168.236.5:5000/signup', {
+    fetch('http://10.140.16.100:5000/signup', {
     
         method: 'POST', // or 'PUT'
         headers: {     
