@@ -230,6 +230,7 @@ border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
     flex-direction: row;
 }
 
+/*mine*/
 .posts{
     margin: 0 auto;
     border: 2px solid black;

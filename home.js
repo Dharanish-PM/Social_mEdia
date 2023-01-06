@@ -8,49 +8,21 @@ function like_post() {
 }
 
 document.querySelector('.like').addEventListener("click",like_post);
-console.log('Bearer '+localStorage.getItem("token"));
+console.log('Bearer ' + localStorage.getItem("token"));
 
-//  fetch('https://jsonplaceholder.typicode.com/posts', {
+
+ fetch('http://10.140.16.52:5000/showpost', {
     
-//         method: 'POST',
-//      headers: {    
-//          'Authorization':'Bearer '+localStorage.getItem("token"),
-//             'Accept': 'application/json,text/plain,*/*',
-//             'Content-Type': 'application/json'      
-//         },
-//         body: ""
+        method: 'POST',
+     headers: {    
+         'Authorization':'Bearer '+localStorage.getItem("token"),
+            'Accept': 'application/json,text/plain,*/*',
+            'Content-Type': 'application/json'      
+        },
+        body: ""
    
-//     }).then((response) => response.json())
-//      .then((data) => {
-//          console.log(data);
-//          var output = ""
-//          data.forEach(post => {
-//             let card=document.createElement('div');
-//             card.classList.add('feed');
-
-//             let user=document.createElement('div');
-//             user.classList.add('user');
-//             user.classList.add('flex-row');
-
-//             card.appendChild(user);
-
-//             document.querySelector("#post-feed").appendChild(card);
-
-             
-            
-//          });
-//          document.querySelector("")
-//          document.querySelector(".posts").innerHTML = output;   
-//         })
-//         .catch((error) => {
-//              console.dir('Error:', error);
-//     });
-
-
-
-    fetch('https://jsonplaceholder.typicode.com/posts', )
-    .then((response) => response.json())
-     .then((data) => {
+    }).then((response) => response.json())
+    .then((data) => {
          console.log(data);
          var output = ""
          data.forEach(post => {
@@ -67,7 +39,7 @@ console.log('Bearer '+localStorage.getItem("token"));
             user_img.classList.add('fa-regular');
             user_img.classList.add('fa-user');
             let para=document.createElement('p');
-            para.innerHTML=post['title']
+            para.innerHTML=post['postid']
 
             user.appendChild(user_img);
             user.appendChild(para);
@@ -104,7 +76,7 @@ console.log('Bearer '+localStorage.getItem("token"));
             let pp=document.createElement('p');
             pp.innerHTML="Title : "+post['title']
             let bb=document.createElement('p');
-            bb.innerHTML="Body : "+post['body'];
+            bb.innerHTML="Body : "+post['created_time'];
 
             desc.appendChild(pp);
             desc.appendChild(bb);
@@ -115,15 +87,30 @@ console.log('Bearer '+localStorage.getItem("token"));
             card.appendChild(options);
             card.appendChild(desc);
 
-            document.querySelector(".posts").appendChild(card);
+             document.querySelector(".posts").appendChild(card);
+             console.log("from post returns");
+             
+             const likes = {
+                'postid':post['postid']
+            }
 
             like.addEventListener('click',()=>{
-                console.log(post['id']);
-                fetch('https://jsonplaceholder.typicode.com/users',)
+                fetch('http://10.140.16.52:5000/like',{
+
+                    method: 'POST',
+                    headers: {    
+                        'Authorization':'Bearer '+localStorage.getItem("token"),
+                        'Accept': 'application/json,text/plain,*/*',
+                        'Content-Type': 'application/json'      
+                    },
+                    body: JSON.stringify(likes)
+                    })
+                    
                 .then((res)=>res.json())
                 .then((data)=>{
                     console.log(data);
                 })
+                    .then((error) => { console.log(error); })
 
                 
             })
@@ -131,10 +118,11 @@ console.log('Bearer '+localStorage.getItem("token"));
              
             
          });
-         document.querySelector("")
-         document.querySelector(".posts").innerHTML = output;   
+       
         })
+     
         .catch((error) => {
              console.dir('Error:', error);
     });
+
 
