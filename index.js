@@ -12,7 +12,6 @@ form1.addEventListener('submit', (e) => {
         "password": inputs["password"].value
        
         }
-        console.log(1);
    
     fetch('http://10.140.16.100:5000/login', {
     
@@ -28,9 +27,15 @@ form1.addEventListener('submit', (e) => {
             console.log(data["token"])
             localStorage.setItem("token", data["token"])
             if (data['status'] == 'Success') {
-                
+                //add login successful
                 window.location.href = "/home.html"
-                
+            }
+            else {
+                //no user exists
+                document.querySelector(".error").classList.remove("disable");
+                document.querySelector(".error").innerHTML = data['status'];
+
+
             }
         })
         .catch((error) => {
@@ -41,7 +46,6 @@ form1.addEventListener('submit', (e) => {
     
 })
 login.addEventListener('click', () => {
-    console.log(3);
     login.classList.remove("ac");
     signup.classList.add("ac");
     
@@ -63,6 +67,7 @@ signup.addEventListener('click', () => {
         "email":inputs["email"].value
     }
    
+  
  
    
     fetch('http://10.140.16.100:5000/signup', {
@@ -81,10 +86,33 @@ signup.addEventListener('click', () => {
         })
         .catch((error) => {
              console.dir('Error:', error);
-        });   
+        }); 
+        
+    alert("Signup is successful Please login");
+    window.location.href = "/index.html";
 })  
 })
 
+
+/*
+function checkpassword() {
+    var pass = document.querySelector("#newpass").value;
+    var cpass = document.querySelector("#confirmpass").value;
+
+    var error = document.querySelector(".error");
+    if (pass.length != 0) {
+        if (pass == cpass) {
+            error.innerHTML = "Password";
+            alert(error.innerHTML);
+        }
+        else {
+            console.log("false");
+        }
+    }
+}
+document.querySelector("#confirmpass").addEventListener('change', () => {
+    checkpassword();
+})*/
 
 
 

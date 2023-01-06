@@ -19,17 +19,17 @@
         
             </div>
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass icon search-icon"></i>
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" placeholder="Search">
             </div>
             <div class="items">
                 <ul>
                     <li><a href="">
-                        <i class="fa-solid fa-house"></i>
+                        <i class="icon fa-solid fa-house"></i>
                         <p>Home</p>
                         </a></li>
                     <li><a href="">
-                        <i class="fa-regular fa-bell"></i>
+                        <i class="icon fa-regular fa-bell"></i>
                         <p>Notification</p>
                     
                         </a></li>
@@ -47,128 +47,111 @@
         </nav>
 
     </div>
-    <section id="post-feed">
-        <div class="left-pane">
-            heyyyy hvfl wvehhevl widthdhvcwydc
-        </div>
-        <div class="right-pane">
 
+    <div class="mainframe">
+        <div class="leftpane">
+            <!--posts-->
+
+            <div class="posts">
+                <div class="card">
+            
+                    <div class="user">
+                        <i class="icon fa-regular fa-user"></i>
+                        <p>username</p>
+                    </div>
+            
+                    
+                     <img src="images/profilepic.jpg" >
+                 
+            
+                    <div class="post-like">
+                        <i class="fa-solid icon fa-heart like"></i>
+                        <i class="fa-regular icon fa-comment comment"></i>
+                    </div>
+                    <div class="desc">
+                        <p>title</p>
+                        <p>body</p>
+                    </div>
+                    <div class="comments">
+                        <input type="text" placeholder="Add comment">
+                    </div>
+            
+                </div>
+            
+            
+            </div>
+
+
+        </div>
+        <div class="rightpane">
+            <!--for creating post-->
 
             <section class="post">
                 <div class="container">
-                    
+            
                     <h1>Create Post</h1>
                     <div class="user-section">
                         <i class="fa-regular fa-user icon"></i>
                         <p>username</p>
-                     </div>
-
-                     <form id="postform">
-                        <input type="file" id="infile" onchange="imageUploaded()">
-
-                        <textarea name="" id="" cols="18" rows="5" placeholder="What would you like to post?"></textarea>
-                        <button type="submit" class="post-btn">Post</button>
-                     </form>
-                   
-        
-                  
-                </div>
-             </section>
-
-              hn 
-        
-             <!--Post Feed-->
-            <section class="feed">
-        
-                <!--username and profile picure-->
-                <div class="user flex-row">
-                    <div class="profilePic">
-                        <img src="images/profilepic.jpg" alt="" height="20" width="20">
                     </div>
-                    <div class="username">
-                        @username
-                    </div>
-                </div>
-        
-                <!--post-->
-                <div class="post">
-                    <img src="images/profilepic.jpg" alt="" height="400" width="450">
-                </div>    
-        
-                <!--comment, like, share-->
-                <div class="post-like">
-                    <i class="fa-solid fa-heart like" ></i>
-                    <i class="fa-regular fa-comment comment"></i>
-                    <i class="fa-solid fa-share share"></i>
-                </div>
-        
-                <!--Number of likes-->
-                <div class="likes-num">
-                    3.5k Likes
-                </div>
-        
-                <!--Description-->
-                <div class="description">
-                    <div class="desc-user">
-                        @username
-                    </div>
-                    This a sample post.            
-                </div>
-        
-                <!--Comments-->
-                <div class="comments">
-                    View all 28 comments
-                </div>
-        
-                <!--Add a comment-->
-                <div class="addComment">
-                    <div class="userprofile">
-                        <img src="images/profilepic.jpg" alt="" height="20" width="20">
-                    </div>
-                    Add a comment...
-                </div>
-        
-                <div class="Timing">
-                    5 January 2022
-                </div>
-            </section>   
-        
-        </div>        
-        
-    </section>
-
-
-
-    <div class="posts">
-        <div class="card">
-
-
-            <div class="user">
-                <i class="icon fa-regular fa-user"></i>
-                <p>username</p>
-            </div>
-
-            <div class="post-img">
-                <img src="images/profilepic.jpg" alt="" height="400" width="450">
-            </div>
-
-            <div class="post-like">
-                <i class="fa-solid fa-heart like"></i>
-                <i class="fa-regular fa-comment comment"></i>
             
-            </div>
+                    <form id="postform">
+                        <div class="imgouter">
+                            <img src="./images/upload.webp" alt="" class="imagefile">
+            
+                        </div>
+            
+            
+            
+                        <textarea name="" id="" cols="50" rows="5" placeholder="Description about the post!!"></textarea>
+                        <label class="upload">
+                            <i class="fa-solid fa-upload"></i>
+                            Upload image
+                            <input type="file" id="infile" onchange="imageUploaded()" placeholder="click">
+                        </label>
+            
+            
+            
+                        <button type="submit" class="post-btn">Post</button>
+                    </form>
+            
+            
+            
+                </div>
+            </section>
 
-            <div class="desc">
-                <p>title</p>
-                <p>body</p>
-            </div>
 
-        
+
 
         </div>
 
 
+
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
 
     
     <script src="./home.js"></script>

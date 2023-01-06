@@ -1,32 +1,38 @@
-console.log('Bearer ' + localStorage.getItem("token"));
+
 //create post
 const postform = document.querySelector("#postform");
 const infile = document.querySelector("#infile");
-
-let base64String = "";
+var srcdata=""
 function imageUploaded() {
-        var file = document.querySelector(
-            'input[type=file]')['files'][0];
-     
-        var reader = new FileReader();     
-    reader.onload = function () {
-        //console.log(reader.result);
-            base64String = reader.result.replace("data:", "")
+    
+    var fileselect = document.querySelector("#infile").files;
+    if (fileselect.length > 0) {
+        fileselect = fileselect[0];
+        var fd = new FileReader();
+        fd.onload = (loadevent) => {
+            srcdata = loadevent.target.result;
+            document.querySelector(".imagefile").src = srcdata;
+            
+            srcdata=srcdata.replace("data:", "")
                 .replace(/^.+,/, "");
+            console.log(srcdata);
+            
         }
-        reader.readAsDataURL(file);
+        fd.readAsDataURL(fileselect);
+    }
+
+    
     }
 
 postform.addEventListener("submit", (e) => {
     e.preventDefault();
     imageUploaded();
-    console.log(base64String);
+
     var obj = {
-        "image": base64String,
+        "image": srcdata,
         "msg":"Hy"
         
     };
-    console.log("OBJECT");
     console.log(obj);
 
     fetch('http://10.140.16.100:5000/post', {
@@ -111,6 +117,7 @@ fetch('http://10.140.16.100:5000/showpost', {
             'postid': post['postid']
         }
         like.addEventListener('click', () => {
+            like.style.color = "red";
             fetch('http://10.140.16.100:5000/like', {
                 method: 'POST',
                 headers: {
@@ -129,3 +136,6 @@ fetch('http://10.140.16.100:5000/showpost', {
 }).catch((error) => {
     console.dir('Error:', error);
 });
+
+
+

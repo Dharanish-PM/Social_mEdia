@@ -76,8 +76,6 @@ body{
     height: 25px;
     position: absolute;
     left:5px;
-    
- 
 }
 input:focus {
     outline: none;
@@ -87,10 +85,7 @@ input {
     /*border-bottom: 5px solid var(--line);*/
     box-shadow: 1px 1px 10px grey;
     font-size: 15px;
-   
     width: 100%;
-    border-radius: 10px;
-    border: 0;
     outline: 0;
     padding: 10px 40px;
     background: transparent;

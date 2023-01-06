@@ -3,6 +3,9 @@
     --background: #b1dee9;
     --line: #000000;
 }
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin: 0;
     padding: 0;
@@ -38,23 +41,19 @@ a{
     align-items: center;
     position: relative;
 }
-input{
+.navbar input{
     box-shadow: 0.05rem 0.05rem 0.5rem grey;
         font-size: 0.85rem;
         border-radius: 0.5rem;
         border: 0;
         outline: 0;
-        padding: 0.5rem 2rem;
+        padding: 0.5rem 2.1rem;
 }
 .search-icon{
     position: absolute;
-    left:0.01rem;
+    left:0.8rem;
 }
-.icon{
-    height: 1rem;
-    width: 1rem;
-    margin: 1rem 0.2rem 1rem 1rem;
-}
+
 
 .items ul{
     display: flex;
@@ -62,27 +61,47 @@ input{
 }
 .items ul li{
     margin: 0 1.5rem;
+   
 }
 .items ul li a{
     display: flex;
     flex-direction: row;
     height: 2.5rem;
     align-items: center;
+    
+
 }
 .items ul li a p{
     margin-left: 0.5rem;
+   
+}
+a:hover{
+    border-bottom:2px solid black ;
 }
 
+
+
+
 /*body*/
+.mainframe {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    
+}
 
 
+.rightpane{
+    width: 30%;
+    padding: 30px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start; 
+}
 .container{
    box-shadow: 0.05rem 0.05rem 1rem 0.05rem rgba(0, 0, 0, 0.5);
-   width: 25%;
-   margin: 0.5rem 20rem 0.5rem 10rem;
    padding:0.5rem 0rem;   
-   border-radius: 1rem;
-   
+   border-radius: 1rem; 
 }
 .container h1{
     text-align: center;
@@ -90,25 +109,59 @@ input{
     border-bottom: 0.1rem solid rgba(0,0,0,0.5);
     margin:0 0.5rem;
 }
-.user-section{
+.user-section {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.user-section img{
+
+.user-section img {
     margin-right: 0.25rem;
     height: 1.5rem;
     width: 1.5rem;
     margin: 0.5rem;
 }
+.imgouter{
+    margin: 1rem 1.5rem;
+    padding: 20px 20px;
+    box-shadow: 2px 2px 10px grey;
+    border-radius: 20px;
+}
+.imagefile{
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.upload {
+    padding: 5px;
+    display: table;
+    color: grey;
+    margin: 1rem auto;
+    background-color: var(--background);
+    border-radius: 0.6rem;
+}
+
+input[type="file"] {
+    display: none;
+}
+input{
+    display: block;
+    margin: 0 auto;
+}
+
+
 textarea{
     display: block;
-    margin: 0.5rem auto;
+    margin: 1rem auto;
     padding: 0.25rem;
     outline: none;
     border: none;
 border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
 }
+
 .post-btn{
     padding: 0.25rem 0.5rem;
     text-align: center;
@@ -123,126 +176,75 @@ border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
 
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+
+
+/*leftpane*/
+.leftpane{
+    padding: 30px;
+    width: 70%;
 }
-
-.profilePic{
-    padding-right: 0.1rem;
-    margin: 0.5rem 0.1rem 0.5rem 1rem; 
-
-}
-
-.username{
-    font-size: 0.75rem;
-    font-weight: bold;
-    margin-top: 0.5rem;
-}
-
-.post{
-    margin: 0.15rem 1rem 0.15rem 0.1rem;
-}
-
-.post-like{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 1rem;
-    
-}
-
-.like{
-    margin-right: 0.25rem; 
-    height: 1rem;
-    width: 1rem;   
-}
-.likebtn{
-    background-color: red;
-    color: red;
-
-}
-
-.share{
-    margin-left: 5px;
-}
-
-.likes-num {
-    font-size : 0.85rem;
-    margin-left: 1rem;
-    
-}
-
-.description {
-    font-size: 0.75rem;
-    margin-left:1rem;
-    padding-bottom: 0.5rem;
-    display: flex;
-    flex-direction: row;
-}
-
-.desc-user{
-    font-weight: bold;
-    font-size: 0.75rem;
-    margin-right: 0.25rem;
-}
-
-.comments {
-    margin-left: 1rem;
-    font-size: 0.75rem;
-}
-
-
-.userprofile {
-    margin-right: 0.5rem; 
-}
-
-.addComment {
-    display: flex;
-    flex-direction: row;
-    font-size: 0.75rem;
-    margin: 0.5rem 1rem 0.1rem 1rem;
-}
-
-.Timing {
-    font-size: 0.65rem;
-    margin-left : 1rem;
-}
-
-.left-pane {
-    margin : 5rem 2rem;
-    box-shadow: 0.05rem 0.05rem 1rem 0.05rem grey;
-
-}
-
-.right-pane {
-    margin : 2rem 0.01rem;
-}
-
-.feed {
-    margin: 5rem 9rem;
-    box-shadow: 0.05rem 0.05rem 1rem 0.05rem grey;
-}
-
-#post-feed {
-    display: flex;
-    flex-direction: row;
-}
-
-/*mine*/
 .posts{
     margin: 0 auto;
-    border: 2px solid black;
+    box-shadow: 1px 1px 10px grey;
     max-width: 1100px;
+    padding: 20px;
 }
 .card{
     margin: 0 auto;
-    border: 2px solid black;
-    width: 50%;
+box-shadow: 1px 1px 10px grey;
+border-radius: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    padding:5px 10px;
+    flex-direction: column;
 }
 .card .user{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 1rem 0.2rem;
+    width: 80%;
+
 }
+.icon{
+    font-size: 20px;
+}
+.card .user .icon{
+    margin-right: 5px;
+    font-size: 20px;
+}
+.card .post-like,.desc{
+    width: 80%;
+}
+.card .post-like .icon{
+    margin:6px 4px;
+    
+}
+.card input{
+    margin: 0;
+
+    border:1px solid black;
+   
+    outline: none;
+    margin:10px 0;
+   padding: 4px 10px;
+   border-radius: 20px 5px 20px 5px;
+    width: 80%;
+  
+}
+.card input:focus,input:hover{
+    box-shadow: 2px 2px 20px grey;
+    border: 0;
+
+}
+.card img{
+   width: 80%;
+}
+.like:hover{
+  color: red;
+  transform: scale(1.3);
+}
+
+
+
