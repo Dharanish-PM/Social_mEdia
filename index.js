@@ -2,6 +2,7 @@ const login = document.querySelector(".login");
 const signup = document.querySelector(".signup");
 var form1 = document.querySelector("#logform");
 var form2 = document.querySelector(".sign");
+const url = "http://192.168.86.111:5000";
 form1.addEventListener("submit", (e) => {
   e.preventDefault(); //autosubmission suppress
   const inputs = form1.elements;
@@ -11,7 +12,7 @@ form1.addEventListener("submit", (e) => {
     password: inputs["password"].value,
   };
 
-  fetch("http://192.168.128.182:5000/login", {
+  fetch(url + "/login", {
     method: "POST", // or 'PUT'
     headers: {
       Accept: "application/json,,text/plain,*/*",
@@ -53,12 +54,13 @@ signup.addEventListener("click", () => {
     e.preventDefault(); //autosubmission suppress
     const inputs = form2.elements;
     const data = {
-      username: inputs["newusername"].value,
+      name: inputs["newusername"].value,
       password: inputs["newpassword"].value,
       email: inputs["email"].value,
     };
+    console.log(data);
 
-    fetch("http://192.168.128.182:5000/signup", {
+    fetch(url + "/signup", {
       method: "POST", // or 'PUT'
       headers: {
         Accept: "application/json,,text/plain,*/*",
