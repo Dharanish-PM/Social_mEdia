@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const url = "http://10.140.16.210:5000";
+=======
+const url = "http://192.168.86.111:5000";
+>>>>>>> 397bb470c58da2f85b33ff2565929953f648ec49
 //create post
 const postform = document.querySelector("#postform");
 const infile = document.querySelector("#infile");
@@ -19,9 +23,7 @@ function imageUploaded() {
     fd.readAsDataURL(fileselect);
   }
 }
-
 getlatest();
-
 postform.addEventListener("submit", (e) => {
   e.preventDefault();
   imageUploaded();
@@ -58,6 +60,7 @@ postform.addEventListener("submit", (e) => {
 //fetch all posts
 function getlatest() {
   document.querySelector(".posts").innerHTML = "";
+
   fetch(url + "/latestpost", {
     method: "POST",
     headers: {
@@ -88,7 +91,7 @@ function getlatest() {
         user_img.classList.add("fa-regular");
         user_img.classList.add("fa-user");
         let para = document.createElement("p");
-        para.innerHTML = post["body"];
+        para.innerHTML = post["name"];
         left.appendChild(user_img);
         left.appendChild(para);
         let trash = document.createElement("i");
@@ -199,12 +202,13 @@ function getlatest() {
           })
             .then((res) => res.json())
             .then((data) => {
+              console.log(data);
               data.forEach((ele) => {
                 let ind_com = document.createElement("div");
                 ind_com.classList.add("individual_comment");
 
                 user_label = document.createElement("p");
-                user_label.innerHTML = "username :";
+                user_label.innerHTML = ele["name"];
                 var usercomment = document.createElement("p");
                 usercomment.classList.add("usercomment");
                 usercomment.innerHTML = ele["msg"];
