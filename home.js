@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const url = "http://10.140.16.210:5000";
-=======
 const url = "http://192.168.86.111:5000";
->>>>>>> 397bb470c58da2f85b33ff2565929953f648ec49
 //create post
 const postform = document.querySelector("#postform");
 const infile = document.querySelector("#infile");
@@ -27,6 +23,9 @@ getlatest();
 postform.addEventListener("submit", (e) => {
   e.preventDefault();
   imageUploaded();
+
+  // var user_name = document.querySelector(".user-section");
+  // user_name.innerHTML = localStorage.getItem("name");
   var description_of_post = document.querySelector("#Description").value;
 
   var obj = {
@@ -48,6 +47,9 @@ postform.addEventListener("submit", (e) => {
     .then((data) => {
       if (data["status"] == "Posted Successfully") {
         //alert(data['status']);
+        document.querySelector(".imagefile").src = "./images/upload.webp";
+        description_of_post.innerHTML = "";
+
         getlatest();
       }
     })
@@ -217,8 +219,40 @@ function getlatest() {
                 var usercomment = document.createElement("p");
                 usercomment.classList.add("usercomment");
                 usercomment.innerHTML = ele["msg"];
+
+                let delpost_i = document.createElement("i");
+                delpost_i.classList.add("icon");
+                delpost_i.classList.add("trash");
+                delpost_i.classList.add("comtrash");
+                delpost_i.classList.add("fa-solid");
+                delpost_i.classList.add("fa-trash");
                 ind_com.appendChild(user_label);
                 ind_com.appendChild(usercomment);
+                if (localStorage.getItem("name") == ele["name"]) {
+                  ind_com.appendChild(delpost_i);
+                }
+                var commentid = {
+                  commentid: ele["commentid"],
+                };
+                delpost_i.addEventListener("click", () => {
+                  fetch(url + "/deletecomment", {
+                    method: "POST",
+                    headers: {
+                      Authorization: "Bearer " + localStorage.getItem("token"),
+                      Accept: "application/json,text/plain,*/*",
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(commentid),
+                  })
+                    .then((res) => res.json())
+                    .then((data) => {
+                      if (data["status"] == "Success") {
+                        latestcomment();
+                      }
+                    })
+                    .catch((er) => console.dir(er));
+                });
+
                 com_desc.appendChild(ind_com);
                 // comments.insertBefore(user_label,post_co);
                 // comments.insertBefore(usercomment,post_co);
@@ -281,7 +315,7 @@ function getlatest() {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              //console.log(data);
               if (data["status"] == "Success") {
                 getlatest();
               }
@@ -291,6 +325,7 @@ function getlatest() {
             });
         }
 
+        //delete comment
         trash.addEventListener("click", () => {
           deletepost();
         });
