@@ -1,4 +1,4 @@
-const url = "http://192.168.128.182:5000";
+const url = "http://10.140.16.210:5000";
 //create post
 const postform = document.querySelector("#postform");
 const infile = document.querySelector("#infile");

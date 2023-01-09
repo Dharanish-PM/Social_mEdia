@@ -11,7 +11,7 @@ form1.addEventListener("submit", (e) => {
     password: inputs["password"].value,
   };
 
-  fetch("http://192.168.128.182:5000/login", {
+  fetch("http://10.140.16.210:5000/login", {
     method: "POST", // or 'PUT'
     headers: {
       Accept: "application/json,,text/plain,*/*",
@@ -58,7 +58,7 @@ signup.addEventListener("click", () => {
       email: inputs["email"].value,
     };
 
-    fetch("http://192.168.128.182:5000/signup", {
+    fetch("http://10.140.16.210:5000/signup", {
       method: "POST", // or 'PUT'
       headers: {
         Accept: "application/json,,text/plain,*/*",
