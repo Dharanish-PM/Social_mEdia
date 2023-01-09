@@ -12,7 +12,11 @@ form1.addEventListener("submit", (e) => {
     password: inputs["password"].value,
   };
 
+<<<<<<< HEAD
+  fetch("http://10.140.16.210:5000/login", {
+=======
   fetch(url + "/login", {
+>>>>>>> 397bb470c58da2f85b33ff2565929953f648ec49
     method: "POST", // or 'PUT'
     headers: {
       Accept: "application/json,,text/plain,*/*",

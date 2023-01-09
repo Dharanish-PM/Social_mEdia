@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+const url = "http://10.140.16.210:5000";
+=======
 const url = "http://192.168.86.111:5000";
+>>>>>>> 397bb470c58da2f85b33ff2565929953f648ec49
 //create post
 const postform = document.querySelector("#postform");
 const infile = document.querySelector("#infile");
