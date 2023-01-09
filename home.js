@@ -90,13 +90,18 @@ function getlatest() {
         para.innerHTML = post["name"];
         left.appendChild(user_img);
         left.appendChild(para);
+
         let trash = document.createElement("i");
         trash.classList.add("icon");
         trash.classList.add("trash");
         trash.classList.add("fa-solid");
         trash.classList.add("fa-trash");
+
         user.appendChild(left);
-        user.appendChild(trash);
+        if (localStorage.getItem("name") == post["name"]) {
+          user.appendChild(trash);
+        }
+
         //post image
         let img = document.createElement("img");
         img.setAttribute("src", post["image"]);

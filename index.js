@@ -24,6 +24,7 @@ form1.addEventListener("submit", (e) => {
     .then((data) => {
       console.log(data["token"]);
       localStorage.setItem("token", data["token"]);
+      localStorage.setItem("name", data["name"]);
       if (data["status"] == "Success") {
         //add login successful
         window.location.href = "/home.html";
