@@ -51,51 +51,63 @@
     <div class="mainframe">
       <div class="leftpane">
         <!--posts-->
-
         <div class="posts">
           <div class="card">
             <div class="user">
-              <div class="left">
+              <div class="user_desc">
                 <i class="icon fa-regular fa-user"></i>
                 <p>hyyy</p>
               </div>
+
               <i class="icon trash fa-solid fa-trash"></i>
             </div>
 
-            <img src="images/profilepic.jpg" />
+            <img src="./images/bg1.jpg" />
 
-            <div class="post-like">
+            <div class="reactions">
               <i class="fa-solid icon fa-heart like"></i>
               <i class="fa-regular icon fa-comment comment"></i>
+              <p class="likeCount">No of likes</p>
             </div>
-            <div class="desc">
-              <p>Description:</p>
+
+            <div class="post_Description">
+              <p>A Earphone</p>
             </div>
+
             <div class="comments">
               <div id="com_desc">
                 <div class="individual_comment">
                   <!--individual comment-->
                   <label id="username_" for="username">username</label>
                   <p class="usercomment">commentadded</p>
-                  <i class="icon trash fa-solid fa-trash"></i>
+                  <i class="icon trash fa-solid fa-trash comtrash"></i>
+                </div>
+                <div class="individual_comment">
+                  <!--individual comment-->
+                  <label id="username_" for="username">username</label>
+                  <p class="usercomment">commentadded</p>
+                  <i class="icon trash fa-solid fa-trash comtrash"></i>
                 </div>
               </div>
 
               <form id="postcomment" action="">
-                <inpu id="inputcomment" type="text" placeholder="Add comment" />
-                <input type="submit" value="" />
+                <input
+                  id="inputcomment"
+                  type="text"
+                  placeholder="Add comment"
+                />
+                <input type="submit" value="Post" class="sub_comment" />
               </form>
-              
             </div>
           </div>
         </div>
       </div>
-      
+
       <div class="rightpane">
         <!--for creating post-->
 
         <section class="post sticky">
-          <div class="container ">
+          <div class="container">
             <h1>Create Post</h1>
             <!-- <div class="user-section">
               <i class="fa-regular fa-user icon"></i>
@@ -117,12 +129,7 @@
               <label class="upload">
                 <i class="fa-solid fa-upload"></i>
                 Upload image
-                <input
-                  type="file"
-                  id="infile"
-                  onchange="imageUploaded()"
-                  placeholder="click"
-                />
+                <input type="file" id="infile" placeholder="click" />
               </label>
 
               <button type="submit" class="post-btn">Post</button>
@@ -132,6 +139,6 @@
       </div>
     </div>
 
-    <script src="./home.js"></script>
+    <script type="module" src="./home.js"></script>
   </body>
 </html>
