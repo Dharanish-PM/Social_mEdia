@@ -1,7 +1,9 @@
 const url = "http://192.168.191.4:5000";
 import Fetch from "./utils/fetch.js";
 import fetchPosts from "./utils/fetchPosts.js";
-
+import search from "./utils/search.js";
+/**Search Functionality */
+search(url);
 fetchPosts(url);
 
 //create post
