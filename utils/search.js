@@ -1,12 +1,18 @@
-// import Fetch from "./fetch";
+import Fetch from "./fetch.js";
 const searchwrapper = document.querySelector(".search-input");
 const inputBox = searchwrapper.querySelector(".inpSearch");
 const suggBox = searchwrapper.querySelector(".autocom-box");
 function search(url) {
   /**Fetch data */
-  const suggestions = ["Franklin", "Jerusha", "Dharanish", "DIwakar", "Sid"];
-  //   const d = Fetch(url, "/userlist", "");
-  //   d.then((data) => suggestions.push(data));
+  const suggestions = [];
+  const d = Fetch(url, "/userlist", "");
+  d.then((data) => {
+    data.forEach((user) => {
+      //user contains userID and userName
+
+      suggestions.push(user[1]);
+    });
+  });
   inputBox.addEventListener("keyup", (e) => {
     let userData = e.target.value;
     let emptyArray = [];
@@ -19,7 +25,7 @@ function search(url) {
       emptyArray = emptyArray.map((ele) => {
         return `<li>` + ele + `</li>`;
       });
-      console.log(emptyArray);
+      //console.log(emptyArray);
       searchwrapper.classList.add("active");
     } else {
       searchwrapper.classList.remove("active");

@@ -1,4 +1,4 @@
-const url = "http://192.168.191.4:5000";
+const url = "http://192.168.191.5:5000";
 import Fetch from "./utils/fetch.js";
 import fetchPosts from "./utils/fetchPosts.js";
 import search from "./utils/search.js";

@@ -3,7 +3,7 @@ import fetchComment from "./commentFetch.js";
 import postComments from "./postComment.js";
 import deletepost from "./deletePost.js";
 function Card(data, url) {
-  //let posts = document.querySelector(".posts");
+  let posts = document.querySelector(".posts");
   posts.innerHTML = "";
   data.forEach((post) => {
     /**Post id */
