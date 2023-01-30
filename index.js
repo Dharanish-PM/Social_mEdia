@@ -2,7 +2,7 @@ const login = document.querySelector(".login");
 const signup = document.querySelector(".signup");
 var form1 = document.querySelector("#logform");
 var form2 = document.querySelector(".sign");
-const url = "http://192.168.86.111:5000";
+const url = "http://10.140.16.114:5000";
 form1.addEventListener("submit", (e) => {
   e.preventDefault(); //autosubmission suppress
   const inputs = form1.elements;
